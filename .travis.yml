@@ -1,0 +1,22 @@
+dist: xenial
+language: generic
+addons:
+  apt:
+    packages:
+      - bsdtar
+      - xorriso
+#      - isolinux
+branches:
+  except:
+    - master
+script: ./debiso.sh
+deploy:
+  provider: releases
+  api_key:
+    secure: 2yoMMhIgnmf/fTSr/Y2FHXGqkgPAU2zXsGrnhZ/LxUd5dfXWFeiyizfJxorLSVMDGXLWlh+31H43sIfFG+Z12zafDuEpNkpi0me1ViLRUgx0P2rgkr8SXLrA5rJ5rlVHVNqpJGT+GhheQ10FaSpiuC9r6jFvpiFdCwxuVigZ1hRxGOljjdGCN1/KFLt02yvJUZAh4JX8zOyMFnsU/mDWo/1NF39nj2wyKhhNVf4mOpVtgJyMBUqcFRFXlZKZBVGT2DMkHLOJlS7EH9DK9nlETMl+x1V4EbAjYbRgm2qGENheFrfRQgw78V5TpN38iVrIvx++YGARfa33QT0as3DcJPlr0RpAqZ8B55xgvD1KKpxWSRNzGBYZk6zrd1BMhsuu7GIphDvLnZw1G8VTv3FkC2rGpwIIuEJp01ArkzFHqtMgflMiq7mgJ9lI6gEY0ArF5cANRdZlGtRaOXav2m0r/Lk/FjCumLi3FvdSZF3CGCiCRkV/CxuF1dpKFKvLp1w5GaEjz4oTQj6fZH4mQNEb/P1twqOOl1oMUrE9RTY0IWAUnXhWy4YfF86+WIP46hZ/Y5xa7ryc1jd3nCvdwN4odZoRqeyRY+5BhI0iNjSLZNTnSWjPU9tRRpZ/1CuaimzzrAsiAFJhXaRhk1xsk4l8iTrbqu0Bim3wQdM/Pjd3ua4=
+  file: debian-*-amd64-netinst-custom.iso
+  file_glob: true
+  skip_cleanup: true
+  on:
+    repo: Nothing4You/debian-netinst-custom
+    tags: true

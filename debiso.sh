@@ -7,7 +7,7 @@ then
 fi
 
 oldiso="debian-$ver-amd64-netinst.iso"
-newiso="debian-$ver-amd64-netinst-ifnames0.iso"
+newiso="debian-$ver-amd64-netinst-custom.iso"
 
 rm -rf cd "$newiso"
 
@@ -29,4 +29,5 @@ xorriso -as mkisofs -o "$newiso" \
 	-c isolinux/boot.cat -b isolinux/isolinux.bin \
 	-no-emul-boot -boot-load-size 4 -boot-info-table ./cd
 
-rm -rf cd isohdpfx.bin
+chmod -R +w cd
+rm -rf cd isohdpfx.bin &> /dev/null || true
