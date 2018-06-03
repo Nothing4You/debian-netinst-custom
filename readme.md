@@ -1,5 +1,9 @@
 Required debian packages:
 
 - bsdtar
-- isolinux
 - xorriso
+
+
+This project modifies the debian netinst iso to in the following ways:
+
+- use ethX interface names during automated install
