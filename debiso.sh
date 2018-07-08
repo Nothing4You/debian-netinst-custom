@@ -20,6 +20,8 @@ chmod -R +w cd
 sed -re 's/(auto=true)/\1 net.ifnames=0/' -i cd/isolinux/adtxt.cfg
 sed -re 's/(auto=true)/\1 net.ifnames=0/' -i cd/isolinux/adgtk.cfg
 
+sed -re 's/^(default ).+/\1auto/' -i cd/isolinux/isolinux.cfg
+
 chmod -R -w cd
 
 dd if="$oldiso" bs=1 count=432 of=isohdpfx.bin

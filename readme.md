@@ -7,3 +7,4 @@ Required debian packages:
 This project modifies the debian netinst iso to in the following ways:
 
 - use ethX interface names during automated install
+- automatically start automated install on boot, skipping the menu
