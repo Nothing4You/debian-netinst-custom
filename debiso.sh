@@ -3,7 +3,7 @@
 ver="$1"
 if [ -z "$ver" ]
 then
-  ver="9.4.0"
+  ver="9.8.0"
 fi
 
 oldiso="debian-$ver-amd64-netinst.iso"
